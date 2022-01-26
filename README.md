@@ -6,7 +6,9 @@ A simple script that creates and trusts a self-signed development certificate fo
 
 The script uses openssl to create a self-signed certificate. The certificate will then be imported and trusted at:
 
-- System certificates - to enable service-to-service communication
+- **System certificates - to enable service-to-service communication**
+
+These three import targets are disabled. **If needed please uncomment**
 - User nssdb - to trust the certificate in supported application like Chromium or Microsoft Edge
 - Snap Chromium nssdb - to trust the certificate in Chromium if installed via snap
 - Snap Postman nssdb - to trust the certificate in Postman if installed via snap

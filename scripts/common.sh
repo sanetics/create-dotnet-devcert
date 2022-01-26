@@ -52,11 +52,11 @@ configure_nssdb() {
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout $KEYFILE -out $CRTFILE -config $CONF_PATH --passout pass:
 openssl pkcs12 -export -out $PFXFILE -inkey $KEYFILE -in $CRTFILE --passout pass:
 
-for NSSDB in $NSSDB_PATHS; do
-    if [ -d "$NSSDB" ]; then
-        configure_nssdb "$NSSDB"
-    fi
-done
+#for NSSDB in $NSSDB_PATHS; do
+#    if [ -d "$NSSDB" ]; then
+#        configure_nssdb "$NSSDB"
+#    fi
+#done
 
 if [ "$(id -u)" -ne 0 ]; then
     # shellcheck disable=SC2034 # SUDO will be used in parent scripts.
